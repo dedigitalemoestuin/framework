@@ -1,0 +1,11 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Frans de Boer", email = "github.wife581@passmail.net" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "django>=6.1.1",
+]
