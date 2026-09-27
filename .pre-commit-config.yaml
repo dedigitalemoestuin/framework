@@ -35,8 +35,7 @@ repos:
       - id: mixed-line-ending
       - id: name-tests-test
         args: ['--django']
-      # Temporarily disabled while the project is being setup
-      #- id: no-commit-to-branch
+      - id: no-commit-to-branch
       - id: pretty-format-json
         args: ['--no-sort-keys']
       - id: requirements-txt-fixer
