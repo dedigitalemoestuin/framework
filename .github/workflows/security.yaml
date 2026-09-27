@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - main
+env:
+  SECRET_KEY: secret-key-used-for-workflows
 jobs:
   backend-audit:
     runs-on: ubuntu-latest
