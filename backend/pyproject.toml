@@ -13,6 +13,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
+    "bandit==1.9.4",
     "django-stubs-ext==6.1.1",
     "django-stubs[compatible-mypy]==6.1.1",
     "mypy==2.3.1",
@@ -64,6 +65,13 @@ ignore_missing_imports = true
 django_settings_module = "core.settings"
 strict_settings = true
 strict_model_abstract_attrs = true
+
+[tool.bandit]
+exclude_dirs = ["tests"]
+tests = [
+    "B101",  # assert_used
+    "B106",  # hardcoded_password_funcarg
+]
 
 [tool.pytest]
 DJANGO_SETTINGS_MODULE = "core.settings"

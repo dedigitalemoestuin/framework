@@ -63,6 +63,12 @@ repos:
     hooks:
       - id: gitleaks
 
+  - repo: https://github.com/PyCQA/bandit
+    rev: '1.9.4'
+    hooks:
+      - id: bandit
+        args: ["-c", "backend/pyproject.toml"]
+
   - repo: https://github.com/astral-sh/uv-pre-commit
     rev: 0.12.19
     hooks:
