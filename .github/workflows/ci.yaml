@@ -9,7 +9,7 @@ on:
 env:
   SECRET_KEY: secret-key-used-for-workflows
 jobs:
-  backend-audit:
+  backend:
     runs-on: ubuntu-latest
     defaults:
       run:
