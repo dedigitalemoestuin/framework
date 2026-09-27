@@ -21,6 +21,9 @@ dev = [
     "pytest-django[django]==4.14.0",
     "ruff==0.16.8",
 ]
+security = [
+    "pip-audit==2.10.1",
+]
 
 [tool.uv]
 exclude-newer = "1 week"
