@@ -1,11 +1,15 @@
+from typing import ClassVar
+
 from django.contrib.auth.models import AbstractBaseUser
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django_stubs_ext.db.models import TypedModelMeta
 
 from .managers import CustomerUserManager
 
+
 class CustomUser(AbstractBaseUser):
-    class Meta:
+    class Meta(TypedModelMeta):
         verbose_name = _("user")
         verbose_name_plural = _("users")
 
@@ -17,7 +21,7 @@ class CustomUser(AbstractBaseUser):
 
     USERNAME_FIELD = "email"
     EMAIL_FIELD = "email"
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS: ClassVar[list[str]] = []
 
     objects = CustomerUserManager()
 
