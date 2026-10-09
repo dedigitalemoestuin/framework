@@ -3,11 +3,11 @@
   "extends": [
     "config:best-practices"
   ],
+  "minimumReleaseAge": "7 days",
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
-    "platformAutomerge": false,
-    "minimumReleaseAge": "7 days"
+    "platformAutomerge": false
   },
   "packageRules": [
     {
@@ -18,8 +18,7 @@
         "digest"
       ],
       "automerge": true,
-      "platformAutomerge": false,
-      "minimumReleaseAge": "7"
+      "platformAutomerge": false
     }
   ]
 }
