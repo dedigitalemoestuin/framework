@@ -20,7 +20,7 @@ dev = [
     "pre-commit==4.6.2",
     "pytest==9.1.1",
     "pytest-django[django]==4.14.0",
-    "ruff==0.16.8",
+    "ruff==0.16.10",
 ]
 security = [
     "pip-audit==2.10.1",
