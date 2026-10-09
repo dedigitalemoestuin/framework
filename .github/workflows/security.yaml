@@ -1,4 +1,4 @@
-name: security
+name: Security
 on:
   push:
     branches:
@@ -7,7 +7,8 @@ env:
   SECRET_KEY: secret-key-used-for-workflows
 jobs:
   backend:
-    runs-on: ubuntu-latest
+    name: Backend
+    runs-on: [ubuntu-latest]
     defaults:
       run:
         working-directory: ./backend
