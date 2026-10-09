@@ -1,5 +1,10 @@
-from django.http import HttpRequest, HttpResponse
+from typing import TYPE_CHECKING
+
+from django.shortcuts import render
+
+if TYPE_CHECKING:
+    from django.http import HttpRequest, HttpResponse
 
 
-def index(_: HttpRequest) -> HttpResponse:
-    return HttpResponse("Hello, World!")
+def index(request: HttpRequest) -> HttpResponse:
+    return render(request, "core/index.html")
