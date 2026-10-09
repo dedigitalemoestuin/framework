@@ -6,7 +6,8 @@
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
-    "platformAutomerge": false
+    "platformAutomerge": false,
+    "minimumReleaseAge": "7 days"
   },
   "packageRules": [
     {
@@ -17,7 +18,8 @@
         "digest"
       ],
       "automerge": true,
-      "platformAutomerge": false
+      "platformAutomerge": false,
+      "minimumReleaseAge": "7"
     }
   ]
 }
