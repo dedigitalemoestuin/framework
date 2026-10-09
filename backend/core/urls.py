@@ -19,6 +19,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from core.views import index
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     # accounts/login/ [name='login']
@@ -30,4 +32,5 @@ urlpatterns = [
     # accounts/reset/<uidb64>/<token>/ [name='password_reset_confirm']
     # accounts/reset/done/ [name='password_reset_complete']
     path("accounts/", include("django.contrib.auth.urls")),
+    path("", index, name="index"),
 ]
