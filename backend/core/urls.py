@@ -18,8 +18,7 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import include, path
-
-from core.views import index
+from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -32,5 +31,5 @@ urlpatterns = [
     # accounts/reset/<uidb64>/<token>/ [name='password_reset_confirm']
     # accounts/reset/done/ [name='password_reset_complete']
     path("accounts/", include("django.contrib.auth.urls")),
-    path("", index, name="index"),
+    path("", TemplateView.as_view(template_name="core/index.html"), name="index"),
 ]
