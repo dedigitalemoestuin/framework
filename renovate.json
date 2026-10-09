@@ -3,6 +3,11 @@
   "extends": [
     "config:best-practices"
   ],
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true,
+    "platformAutomerge": false
+  },
   "packageRules": [
     {
       "matchUpdateTypes": [
