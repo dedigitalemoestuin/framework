@@ -1,5 +1,7 @@
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
+        # BasicAuthentication is removed on purpose.
+        # Docs describe it as "only appropriate for testing"
         # TokenAuthentication is allowed (and even encouraged) but should be set per API
         "rest_framework.authentication.SessionAuthentication",
     ],
