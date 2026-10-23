@@ -19,6 +19,12 @@ Including another URLconf
 from django.urls import include, path
 from django.views.generic import RedirectView
 from django.views.generic.base import TemplateView
+from rest_framework.routers import DefaultRouter
+
+from accounts.views import UserViewSet
+
+router = DefaultRouter()
+router.register(r"users", UserViewSet, basename="user")
 
 urlpatterns = [
     path(
@@ -29,5 +35,6 @@ urlpatterns = [
         RedirectView.as_view(pattern_name="account_login", permanent=False),
     ),
     path("auth/", include("allauth.urls")),
+    path("api/", include(router.urls)),
     path("", TemplateView.as_view(template_name="core/index.html"), name="index"),
 ]
