@@ -136,6 +136,14 @@ MAILERS = {
     },
 }
 
+# DRF
+REST_FRAMEWORK = {
+    "DEFAULT_PERMISSION_CLASSES": [
+        # No access by default. Each endpoint needs to define its own access rules
+        "core.permissions.AllowNone"
+    ]
+}
+
 # Custom Authentication
 
 AUTH_USER_MODEL = "accounts.CustomUser"
