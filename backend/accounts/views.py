@@ -9,7 +9,7 @@ from accounts.models import CustomUser
 from accounts.serializers import UserSerializer
 
 if TYPE_CHECKING:
-    from typing import ClassVar
+    from collections.abc import Sequence
 
     from rest_framework.authentication import BaseAuthentication
     from rest_framework.permissions import BasePermission
@@ -18,8 +18,8 @@ if TYPE_CHECKING:
 
 
 class UserViewSet(ModelViewSet[CustomUser]):
-    authentication_classes: ClassVar[list[BaseAuthentication]] = [SessionAuthentication]
-    permission_classes: ClassVar[list[BasePermission]] = [AllowAny]
+    authentication_classes: Sequence[type[BaseAuthentication]] = [SessionAuthentication]
+    permission_classes: Sequence[type[BasePermission]] = [AllowAny]
 
     serializer_class = UserSerializer
     queryset = CustomUser.objects.all()
