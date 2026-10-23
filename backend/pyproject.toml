@@ -11,6 +11,7 @@ dependencies = [
     # django plugins
     "django-allauth[mfa]==65.22.1",
     "django-environ==0.14.0",
+    "djangorestframework==3.18.3",
 ]
 
 [dependency-groups]
@@ -18,7 +19,8 @@ dev = [
     "bandit==1.9.4",
     "django-stubs-ext==6.1.2",
     "django-stubs[compatible-mypy]==6.1.2",
-    "mypy==2.4.1",
+    "djangorestframework-stubs[compatible-mypy]==3.18.1",
+    "mypy==2.3.1",
     "pre-commit==4.7.0",
     "pytest==9.2.0",
     "pytest-django[django]==4.14.0",
