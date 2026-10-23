@@ -11,7 +11,12 @@ https://docs.djangoproject.com/en/6.1/ref/settings/
 
 from pathlib import Path
 
+import django_stubs_ext
 import environ
+
+# Monkeypatching Django, so stubs will work for all generics,
+# see: https://github.com/typeddjango/django-stubs
+django_stubs_ext.monkeypatch()
 
 env = environ.Env(DEBUG=(bool, False))
 
@@ -134,6 +139,22 @@ MAILERS = {
             "port": "1025",
         },
     },
+}
+
+# DRF
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        # BasicAuthentication is removed on purpose.
+        # Docs describe it as "only appropriate for testing"
+        # TokenAuthentication is allowed (and even encouraged) but should be set per API
+        "rest_framework.authentication.SessionAuthentication",
+    ],
+    "DEFAULT_PERMISSION_CLASSES": [
+        # No access by default. Each endpoint needs to define its own access rules
+        "core.permissions.AllowNone",
+    ],
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 10,
 }
 
 # Custom Authentication
