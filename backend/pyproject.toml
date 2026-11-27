@@ -74,6 +74,10 @@ strict = true
 module = ["environ.*"]
 ignore_missing_imports = true
 
+[[tool.mypy.overrides]]
+module = ["allauth.*"]
+follow_untyped_imports = true
+
 [tool.django-stubs]
 django_settings_module = "core.settings"
 strict_settings = true
