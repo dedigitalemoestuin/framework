@@ -4,8 +4,9 @@ from django.test import TestCase
 
 
 class UserManagersTests(TestCase):
-    def test_create_user(self) -> None:
-        User = get_user_model()  # noqa: N806
+    @staticmethod
+    def test_create_user() -> None:
+        User = get_user_model()  # ruff: ignore[non-lowercase-variable-in-function]
         user = User.objects.create_user(email="normal@user.com", password="foo")
 
         assert user.email == "normal@user.com"
@@ -20,8 +21,9 @@ class UserManagersTests(TestCase):
         with pytest.raises(ValueError, match="The Email must be set"):
             User.objects.create_user(email="", password="foo")
 
-    def test_create_superuser(self) -> None:
-        User = get_user_model()  # noqa: N806
+    @staticmethod
+    def test_create_superuser() -> None:
+        User = get_user_model()  # ruff: ignore[non-lowercase-variable-in-function]
         admin_user = User.objects.create_superuser(
             email="super@user.com",
             password="foo",
