@@ -1,0 +1,25 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/backend/.venv/bin/python",
+  "files.exclude": {
+    "**/.mypy_cache": true,
+    "**/.pytest_cache": true,
+    "**/.ruff_cache": true,
+    "**/__pycache__": true,
+    "backend/.venv": true,
+    "backend/private_media": true,
+    "backend/staticfiles": true,
+    "backend/db.sqlite3": true,
+    "frontend/node_modules": true
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": false,
+  "explorer.fileNesting.patterns": {
+    "README.md": ".gitignore, .pre-commit-config.yaml, .python-version, .nvmrc, .npmrc",
+    "Dockerfile": ".dockerignore, compose.*.yml, entrypoint.sh",
+    "pyproject.toml": "uv.lock",
+    "manage.py": "schema.yml",
+    "package.json": "package-lock.json, .npmrc, eslint.config.js, .prettierignore, openapi-ts.config.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "vite.config.ts": "vitest.config.ts"
+  }
+}
