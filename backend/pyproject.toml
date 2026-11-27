@@ -30,7 +30,11 @@ security = [
 [tool.uv]
 exclude-newer = "1 week"
 
+[tool.ruff.format]
+preview = true
+
 [tool.ruff.lint]
+preview = true
 extend-select = [
     "ALL"
 ]
