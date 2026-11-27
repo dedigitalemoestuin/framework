@@ -4,11 +4,15 @@
     "config:best-practices"
   ],
   "minimumReleaseAge": "7 days",
+  "abandonmentThreshold": "2 years",
+
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
-    "platformAutomerge": false
+    "platformAutomerge": false,
+    "minimumReleaseAge": null
   },
+
   "packageRules": [
     {
       "matchUpdateTypes": [
@@ -19,6 +23,18 @@
       ],
       "automerge": true,
       "platformAutomerge": false
+    },
+    {
+      "matchUpdateTypes": ["patch"],
+      "groupName": "patches"
+    },
+    {
+      "matchUpdateTypes": ["pin"],
+      "groupName": "pins"
+    },
+    {
+      "matchUpdateTypes": ["digest"],
+      "groupName": "digests"
     }
   ]
 }
