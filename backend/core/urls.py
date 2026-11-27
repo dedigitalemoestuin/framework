@@ -17,9 +17,18 @@ Including another URLconf
 """
 
 from django.urls import include, path
+from django.views.generic import RedirectView
 from django.views.generic.base import TemplateView
 
 urlpatterns = [
-    path("accounts/", include("accounts.urls")),
+    path(
+        "auth/email/", RedirectView.as_view(pattern_name="mfa_index", permanent=False)
+    ),
+    path(
+        "auth/signup/",
+        RedirectView.as_view(pattern_name="account_login", permanent=False),
+    ),
+    path("auth/", include("allauth.urls")),
+
     path("", TemplateView.as_view(template_name="core/index.html"), name="index"),
 ]
