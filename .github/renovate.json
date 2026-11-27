@@ -7,34 +7,48 @@
   "abandonmentThreshold": "2 years",
 
   "lockFileMaintenance": {
-    "enabled": true,
-    "automerge": true,
-    "platformAutomerge": false,
-    "minimumReleaseAge": null
+    "enabled": true
   },
 
   "packageRules": [
     {
+      "description": "Wait 7 days for all dependency updates",
       "matchUpdateTypes": [
         "minor",
         "patch",
         "pin",
         "digest"
       ],
+      "minimumReleaseAge": "7 days",
       "automerge": true,
       "platformAutomerge": false
     },
     {
+      "description": "Group patch updates",
       "matchUpdateTypes": ["patch"],
       "groupName": "patches"
     },
     {
+      "description": "Group pin updates",
       "matchUpdateTypes": ["pin"],
       "groupName": "pins"
     },
     {
+      "description": "Group digest updates",
       "matchUpdateTypes": ["digest"],
       "groupName": "digests"
+    },
+    {
+      "description": "Automerge lock file maintenance",
+      "matchUpdateTypes": ["lockFileMaintenance"],
+      "automerge": true,
+      "platformAutomerge": false,
+      "minimumReleaseAge": null
+    },
+    {
+      "description": "Wait 7 days for npm dependency updates",
+      "matchDatasources": ["npm"],
+      "minimumReleaseAge": "7 days"
     }
   ]
 }
