@@ -1,6 +1,6 @@
 AUTH_PASSWORD_VALIDATORS = [
     {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",  # noqa: E501
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",  # ruff: ignore[line-too-long]
     },
     {
         "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
