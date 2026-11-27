@@ -29,6 +29,5 @@ urlpatterns = [
         RedirectView.as_view(pattern_name="account_login", permanent=False),
     ),
     path("auth/", include("allauth.urls")),
-
     path("", TemplateView.as_view(template_name="core/index.html"), name="index"),
 ]
