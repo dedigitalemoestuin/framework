@@ -55,6 +55,10 @@ ignore = [
     "S106",   # Possible hardcoded assignment to argument: "password"
 ]
 
+"core/settings/__init__.py" = [
+    "F403"    # undefined-local-with-import-star
+]
+
 [tool.mypy]
 plugins = ["mypy_django_plugin.main"]
 strict = true
