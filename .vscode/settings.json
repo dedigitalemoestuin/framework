@@ -14,7 +14,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    "README.md": ".gitignore, .pre-commit-config.yaml, .python-version, .nvmrc, .npmrc",
+    "README.md": ".gitignore, .pre-commit-config.yaml, .python-version, .nvmrc, .npmrc, db.sqlite3, .env",
     "Dockerfile": ".dockerignore, compose.*.yml, entrypoint.sh",
     "pyproject.toml": "uv.lock",
     "manage.py": "schema.yml",
