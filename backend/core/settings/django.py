@@ -18,6 +18,7 @@ INSTALLED_APPS = [
     "allauth.account",
     "allauth.mfa",
     "rest_framework",
+    "drf_spectacular",
     # Local apps
     "accounts",
 ]

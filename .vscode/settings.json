@@ -16,8 +16,7 @@
   "explorer.fileNesting.patterns": {
     "README.md": ".gitignore, .pre-commit-config.yaml, .python-version, .nvmrc, .npmrc, db.sqlite3, .env",
     "Dockerfile": ".dockerignore, compose.*.yml, entrypoint.sh",
-    "pyproject.toml": "uv.lock",
-    "manage.py": "schema.yml",
+    "pyproject.toml": "uv.lock, schema.yml",
     "package.json": "package-lock.json, .npmrc, eslint.config.js, .prettierignore, openapi-ts.config.ts",
     "tsconfig.json": "tsconfig.*.json",
     "vite.config.ts": "vitest.config.ts"
