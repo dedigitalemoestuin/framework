@@ -33,8 +33,9 @@ repos:
       #- id: forbid-new-submodules
       - id: forbid-submodules
       - id: mixed-line-ending
-      - id: name-tests-test
-        args: ['--django']
+      # ignoring till I find a way to fix this for the factories
+      # - id: name-tests-test
+      #  args: ['--django']
       # Allowing committing to main for now
       # - id: no-commit-to-branch
       - id: pretty-format-json

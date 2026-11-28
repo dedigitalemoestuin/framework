@@ -76,6 +76,7 @@ plugins = [
     "mypy_drf_plugin.main",
     ]
 strict = true
+untyped_calls_exclude = ["factory"]
 
 [[tool.mypy.overrides]]
 module = ["environ.*"]

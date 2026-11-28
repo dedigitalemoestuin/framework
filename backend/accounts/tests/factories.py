@@ -1,10 +1,10 @@
-from factory import Sequence
+from factory.declarations import Sequence
 from factory.django import DjangoModelFactory, Password
 
 from accounts.models import CustomUser
 
 
-class UserFactory(DjangoModelFactory):
+class UserFactory(DjangoModelFactory[CustomUser]):
     class Meta:
         model = CustomUser
 
