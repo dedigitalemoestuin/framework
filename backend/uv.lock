@@ -90,13 +90,11 @@ dev = [
     { name = "factory-boy" },
     { name = "faker" },
     { name = "mypy" },
+    { name = "pip-audit" },
     { name = "pre-commit" },
     { name = "pytest" },
     { name = "pytest-django", extra = ["django"] },
     { name = "ruff" },
-]
-security = [
-    { name = "pip-audit" },
 ]
 
 [package.metadata]
@@ -117,12 +115,12 @@ dev = [
     { name = "factory-boy", specifier = "==3.3.3" },
     { name = "faker", specifier = "==40.43.0" },
     { name = "mypy", specifier = "==2.3.1" },
+    { name = "pip-audit", specifier = ">=2.10.1" },
     { name = "pre-commit", specifier = "==4.7.0" },
     { name = "pytest", specifier = "==9.2.0" },
     { name = "pytest-django", extras = ["django"], specifier = "==4.14.0" },
     { name = "ruff", specifier = "==0.17.6" },
 ]
-security = [{ name = "pip-audit", specifier = "==2.10.1" }]
 
 [[package]]
 name = "bandit"
