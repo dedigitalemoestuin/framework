@@ -1,22 +1,20 @@
-from typing import TYPE_CHECKING
-
 import pytest
 from django.db import IntegrityError
 from django.test import TestCase
 
 from accounts.tests.factories import UserFactory
-
-if TYPE_CHECKING:
-    from accounts.models import CustomUser
+lazy from accounts.models import CustomUser
 
 
 class TestCustomerUserModel(TestCase):
-    def test_email_unique_constraint(self) -> None:
+    @staticmethod
+    def test_email_unique_constraint() -> None:
         UserFactory(email="user_0@testing.com")
         with pytest.raises(IntegrityError):
             UserFactory(email="user_0@testing.com")
 
-    def test_user_defaults(self) -> None:
+    @staticmethod
+    def test_user_defaults() -> None:
         user: CustomUser = UserFactory()
         assert user.is_active
         assert not user.is_staff

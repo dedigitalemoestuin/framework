@@ -1,12 +1,9 @@
-from typing import TYPE_CHECKING
+lazy from collections.abc import Sequence
+lazy from typing import ClassVar
 
 from rest_framework import serializers
 
 from accounts.models import CustomUser
-
-if TYPE_CHECKING:
-    from collections.abc import Sequence
-    from typing import ClassVar
 
 
 class UserSerializer(serializers.ModelSerializer[CustomUser]):

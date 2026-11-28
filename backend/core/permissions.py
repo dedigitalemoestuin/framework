@@ -1,11 +1,9 @@
-from typing import TYPE_CHECKING, override
+from typing import override
 
 from rest_framework.permissions import BasePermission
-
-if TYPE_CHECKING:
-    from django.db.models import Model
-    from rest_framework.request import Request
-    from rest_framework.views import APIView
+lazy from django.db.models import Model
+lazy from rest_framework.request import Request
+lazy from rest_framework.views import APIView
 
 
 class AllowNone(BasePermission):
