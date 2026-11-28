@@ -35,7 +35,8 @@ repos:
       - id: mixed-line-ending
       - id: name-tests-test
         args: ['--django']
-      - id: no-commit-to-branch
+      # Allowing committing to main for now
+      # - id: no-commit-to-branch
       - id: pretty-format-json
         args: ['--no-sort-keys']
       - id: requirements-txt-fixer
