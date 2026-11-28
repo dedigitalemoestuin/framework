@@ -1,4 +1,10 @@
+import django_stubs_ext
+
 from .env import BASE_DIR
+
+# Monkeypatching Django, so stubs will work for all generics,
+# see: https://github.com/typeddjango/django-stubs
+django_stubs_ext.monkeypatch()
 
 INSTALLED_APPS = [
     # Django apps
@@ -11,6 +17,7 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "allauth.mfa",
+    "rest_framework",
     # Local apps
     "accounts",
 ]
