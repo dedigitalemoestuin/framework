@@ -46,35 +46,36 @@ extend-select = [
 ]
 
 ignore = [
-    "COM812", # missing-trailing-comma (incompatible with formatter)
-    "CPY001", # Missing copyright notice at top of file
-    "D100",   # Missing docstring in public modules
-    "D101",   # Missing docstring in public class
-    "D102",   # Missing docstring in public method
-    "D103",   # Missing docstring in public function
-    "D104",   # Missing docstring in public package
-    "D105",   # Missing docstring in magic method
-    "D106",   # Missing docstring in public nested class
-    "D203",   # incorrect-blank-line-before-class (incompatible with D211: blank-line-before-class)
-    "D213",   # multi-line-summary-second-line (incompatible with D212: multi-line-summary-first-line)
-    "DOC501", # docstring-missing-exception
+    "missing-trailing-comma",
+    "missing-copyright-notice",
+    "undocumented-public-module",
+    "undocumented-public-class",
+    "undocumented-public-method",
+    "undocumented-public-function",
+    "undocumented-public-package",
+    "undocumented-magic-method",
+    "undocumented-public-nested-class",
+    "incorrect-blank-line-before-class",
+    "multi-line-summary-second-line",
+    "docstring-missing-exception",
 ]
 
 [tool.ruff.lint.extend-per-file-ignores]
 "test_*.py" = [
-    "S101",   # Use of `assert` detected
-    "S106",   # Possible hardcoded assignment to argument: "password"
+    "assert",
+    "hardcoded-password-func-arg",
 ]
 
 "core/settings/__init__.py" = [
-    "F403"    # undefined-local-with-import-star
+    "undefined-local-with-import-star"
 ]
 
 [tool.mypy]
 plugins = [
     "mypy_django_plugin.main",
     "mypy_drf_plugin.main",
-    ]
+]
+
 strict = true
 untyped_calls_exclude = ["factory"]
 
