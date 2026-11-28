@@ -1,4 +1,10 @@
+import django_stubs_ext
+
 from .env import BASE_DIR
+
+# Monkeypatching Django, so stubs will work for all generics,
+# see: https://github.com/typeddjango/django-stubs
+django_stubs_ext.monkeypatch()
 
 INSTALLED_APPS = [
     # Django apps
